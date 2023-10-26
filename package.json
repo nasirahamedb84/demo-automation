@@ -1,0 +1,22 @@
+{
+  "name": "cucumber-js-selenium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/cucumber-js --tags @debug --format json:./reports/results.json",
+    "test-debug": "node_modules/.bin/cucumber-js --tags @smoke features/feature-files/login.feature --format json:./reports/results.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^9.3.0",
+    "cucumber-html-reporter": "^7.1.1",
+    "selenium-webdriver": "^4.11.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "cucumber-junit-vsts": "^1.0.0"
+  }
+}

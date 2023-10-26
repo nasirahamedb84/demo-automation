@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="Feature: bikes parts tab" tests="7" failures="2" skipped="0">
+        <properties>
+            <property name="URI" value="features\bikesPartsTab\bikesPartsSearch.feature">
+            </property>
+        </properties>
+        <testcase name="Scenario: bike tab - Layout and behaviour - assembly groups" time="12.365">
+            <failure message="TimeoutError: AssemblyGroups Shown"><![CDATA[TimeoutError: AssemblyGroups Shown
+Wait timed out after 1012ms
+    at C:\Users\ckr\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2201:17
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)]]></failure>
+            <system-out><![CDATA[Feature: bikes parts tab
+Scenario: bike tab - Layout and behaviour - assembly groups
+
+Given I am on the home page (passed after 6.513 sec)
+When I search for bike brand APRILIA, model AREA and type AREA 51 CatCon on the bikes tab (passed after 4.837 sec)
+Then the bikes assembly groups should be shown (failed after 1.015 sec)
+]]></system-out>
+        </testcase>
+        <testcase name="Scenario: Clear bike Selection - Layout and behaviour" time="9.998000000000001">
+            <system-out><![CDATA[Feature: bikes parts tab
+Scenario: Clear bike Selection - Layout and behaviour
+
+Given I am on the home page (passed after 4.777 sec)
+And the bikes selection should be cleared (passed after 0.44 sec)
+When I search for bike brand APRILIA, model AREA and type AREA 51 CatCon on the bikes tab (passed after 4.444 sec)
+And I click clear on bikes tab (passed after 0.318 sec)
+Then I should see the bike parts page (passed after 0.019 sec)
+]]></system-out>
+        </testcase>
+        <testcase name="Scenario: Clear bike Selection - Layout and behaviour" time="10.358999999999998">
+            <system-out><![CDATA[Feature: bikes parts tab
+Scenario: Clear bike Selection - Layout and behaviour
+
+Given I am on the home page (passed after 5.182 sec)
+And the bikes selection should be cleared (passed after 0.457 sec)
+When I search for bike brand BMW, model F and type F 650 on the bikes tab (passed after 4.395 sec)
+And I click clear on bikes tab (passed after 0.309 sec)
+Then I should see the bike parts page (passed after 0.016 sec)
+]]></system-out>
+        </testcase>
+        <testcase name="Scenario: Change Vehicle Selection - Behaviour" time="14.578999999999999">
+            <system-out><![CDATA[Feature: bikes parts tab
+Scenario: Change Vehicle Selection - Behaviour
+
+Given I am on the home page (passed after 5.049 sec)
+And the bikes selection should be cleared (passed after 0.5 sec)
+When I search for bike brand APRILIA, model AREA and type AREA 51 CatCon on the bikes tab (passed after 4.536 sec)
+And I research for bike brand BMW, model F and type F 650 on the bikes tab (passed after 4.31 sec)
+Then I should see following BMW MOTORCYCLES F F 650 (169) selectedVehicle truck (passed after 0.184 sec)
+]]></system-out>
+        </testcase>
+        <testcase name="Scenario: Clear Vehicle Selection - Layout and behaviour" time="11.052000000000001">
+            <system-out><![CDATA[Feature: bikes parts tab
+Scenario: Clear Vehicle Selection - Layout and behaviour
+
+Given I am on the home page (passed after 4.511 sec)
+And the bikes selection should be cleared (passed after 0.458 sec)
+When I search for bike brand APRILIA, model AREA and type AREA 51 CatCon on the bikes tab (passed after 5.256 sec)
+And I click change button on bikes tab (passed after 0.45 sec)
+And I click back button on bikes tab (passed after 0.256 sec)
+Then I should see following APRILIA MOTORCYCLES AREA Area 51 CatCon. (MY) selectedVehicle bikes (passed after 0.121 sec)
+]]></system-out>
+        </testcase>
+        <testcase name="Scenario: Clear Vehicle Selection - Layout and behaviour" time="10.873">
+            <system-out><![CDATA[Feature: bikes parts tab
+Scenario: Clear Vehicle Selection - Layout and behaviour
+
+Given I am on the home page (passed after 4.895 sec)
+And the bikes selection should be cleared (passed after 0.798 sec)
+When I search for bike brand BMW, model F and type F 650 on the bikes tab (passed after 4.625 sec)
+And I click change button on bikes tab (passed after 0.275 sec)
+And I click back button on bikes tab (passed after 0.165 sec)
+Then I should see following BMW MOTORCYCLES F F 650 (169) selectedVehicle bikes (passed after 0.115 sec)
+]]></system-out>
+        </testcase>
+        <testcase name="Scenario: bike tab - Layout and behaviour - assembly groups" time="7.458">
+            <failure message="TimeoutError: Wait timed out after 2000ms"><![CDATA[TimeoutError: Wait timed out after 2000ms
+    at C:\Users\ckr\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2201:17
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)]]></failure>
+            <system-out><![CDATA[Feature: bikes parts tab
+Scenario: bike tab - Layout and behaviour - assembly groups
+
+Given I am on the home page (passed after 4.762 sec)
+When I search for bike brand APRILIA, model AREA and type AREA 51 CatCon on the bikes tab (failed after 2.696 sec)
+And I select the history dropdown on bikes tab (skipped after NaN sec)
+Then the bikes history should be shown (skipped after NaN sec)
+]]></system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="Feature: Login page webshop 3.0" tests="1" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="features\Login\Login.feature">
+            </property>
+        </properties>
+        <testcase name="Scenario: Login with valid credentials" time="3.567">
+            <system-out><![CDATA[Feature: Login page webshop 3.0
+Scenario: Login with valid credentials
+
+Given I am on the Login page (passed after 1.512 sec)
+When I try to login with Test User username and Start1234! password (passed after 0.573 sec)
+Then I am on webshop homepage (passed after 1.482 sec)
+]]></system-out>
+        </testcase>
+    </testsuite>
+</testsuites>

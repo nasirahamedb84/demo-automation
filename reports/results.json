@@ -1,0 +1,890 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "testing-login-scenarios-for-entrustody-insight;verify-user-able-to-login-to-insight-dashbaord-using-valid-username-and-password",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Verify User able to login to Insight Dashbaord using valid Username and Password",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1387244
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I am on the Sign In page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11218461302
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I enter my valid Email address and password",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23259011023
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click on Sign In button",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15043997150
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should be redirected to Insight Dashboard page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38697718
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "Clicking on logout brings to login page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13978157019
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 111285207
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 3
+          },
+          {
+            "name": "@regression",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-login-scenarios-for-entrustody-insight;unsuccessful-login-with-incorrect-email-address",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Unsuccessful Login with Incorrect Email Address",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 107255
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "I am on the Sign In page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6688853482
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I enter an Invalid Email id",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19166822833
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I enter a valid Password",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4067676162
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click on Sign In button",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15039476726
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "I should see an error message \"We can't seem to find your account\"",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:57"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20297883
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I should remain on the Sign in page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1012479873
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 105577498
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 12
+          },
+          {
+            "name": "@regression",
+            "line": 13
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-login-scenarios-for-entrustody-insight;unsuccessful-login-with-incorrect-password",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Unsuccessful Login with Incorrect Password",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 96047
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "I am on the Sign In page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6380750614
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I enter an valid Email id",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19171240917
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "I enter a invalid Password",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4072556178
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "I click on Sign In button",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15040622087
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "I should see an error message \"Your password is incorrect\"",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:57"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26306404
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "I should remain on the Sign in page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1017273866
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 51650140
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 22
+          },
+          {
+            "name": "@smoke",
+            "line": 23
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-login-scenarios-for-entrustody-insight;accessing-the-insight-dashboard-without-logging-in",
+        "keyword": "Scenario",
+        "line": 34,
+        "name": "Accessing the Insight Dashboard Without Logging In",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 89235
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "I try to access the dashbaord URL directly",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:71"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6657896701
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "I should redirect to Insight Sign In Page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:75"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1025099174
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "Clicking on Sign In button takes to login page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16080102881
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 55172379
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 32
+          },
+          {
+            "name": "@smoke",
+            "line": 33
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "testing-login-scenarios-for-entrustody-insight",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Testing Login scenarios for Entrustody Insight",
+    "tags": [],
+    "uri": "features/feature-files/login.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "testing-welcome-page-scenarios-for-entrustody-insight;verifying-the-tiles",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Verifying the Tiles",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 81921
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on the Sign In page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5818939024
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter my valid Email address and password",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23245113753
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on Sign In button",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15043278778
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should see the all 7 tiles on the top container",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:110"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 138726137
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "Clicking on logout brings to login page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13584893131
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 52247951
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-welcome-page-scenarios-for-entrustody-insight;verifying-the-net-new-assets-tile-mouse-hover-functionality",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Verifying the Net New Assets Tile mouse hover functionality",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 87271
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I am on the Sign In page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5921804354
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I enter my valid Email address and password",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23253466650
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I click on Sign In button",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15067151623
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I mouse hover on Net New Assets tile",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:120"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1141588795
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I should see the tile gets highlighted with grey background",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:125"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13673904
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Clicking on logout brings to login page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14260716020
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 55378122
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 11
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-welcome-page-scenarios-for-entrustody-insight;verifying-the-net-new-assets-report",
+        "keyword": "Scenario",
+        "line": 22,
+        "name": "Verifying the Net New Assets Report",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 76431
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 23,
+            "name": "I am on the Sign In page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5923384560
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "I enter my valid Email address and password",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23246127859
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "I click on Sign In button",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15042813189
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "I should see the Net New Assets report displayed with applied filter - By Advisor and Last 30 days under Net New Assets",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 240365556
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "net new aum for an advisor is below a pre-determined threshold or goal, their record is highlighted red",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:90"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9642621
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "net new aum for an advisor is above a pre-determined threshold or goal, their record is highlighted green",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:95"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7183917
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "Clicking on logout brings to login page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:33"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 12745673143,
+              "error_message": "AssertionError [ERR_ASSERTION]: 'Pedro Duarte' == 'SIGN IN'\n    + expected - actual\n\n    -Pedro Duarte\n    +SIGN IN\n\n    at LoginPage.verifySignInButtonOnLoginPage (/Users/nasirahamed/cucumber-POM-selenium-js/features/page-objects/login.js:74:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async CustomWorld.<anonymous> (/Users/nasirahamed/cucumber-POM-selenium-js/features/step-definitions/actionsSteps.js:36:3)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 55941401
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 20
+          },
+          {
+            "name": "@regression",
+            "line": 21
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-welcome-page-scenarios-for-entrustody-insight;verifying-the-total-aum-report",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "Verifying the Total AUM Report",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 257471
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 34,
+            "name": "I am on the Sign In page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6026049033
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "I enter my valid Email address and password",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23226764294
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "I click on Sign In button",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15044156402
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "I should see the Total AUM report displayed with applied filter - By Advisor and Current",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:84"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 221805249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 38,
+            "name": "Total AUM for an advisor is below a pre-determined threshold or goal, their record is highlighted red",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10037228
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "Total AUM for an advisor is above a pre-determined threshold or goal, their record is highlighted green",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:105"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7497055
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Clicking on logout brings to login page",
+            "match": {
+              "location": "features/step-definitions/actionsSteps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13504115168
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 52763512
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 31
+          },
+          {
+            "name": "@smoke",
+            "line": 32
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "testing-welcome-page-scenarios-for-entrustody-insight",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Testing welcome page scenarios for Entrustody Insight",
+    "tags": [],
+    "uri": "features/feature-files/welcome.feature"
+  }
+]
