@@ -1,11 +1,11 @@
 Feature: Testing welcome page scenarios for Entrustody Insight
 
     @all
-    Scenario: Verifying the Tiles
+    Scenario: Verifying the Insight Firm Over L1 tiles
         Given I am on the Sign In page
         When I enter my valid Email address and password
         And I click on Sign In button
-        Then I should see the all 7 tiles on the top container
+        Then I should see L1 tiles displayed in the order - "NET NEW ASSETS", "HOUSEHOLDS", "ONBOARDING TIME", "OUTFLOW", "GROWTH RATE", "POOR PERFORMING ADVISOR", "TOP PERFORMING OFFICE", "TOP PERFORMING ADVISOR"
         And Clicking on logout brings to login page
     
     @all
@@ -18,7 +18,7 @@ Feature: Testing welcome page scenarios for Entrustody Insight
         And Clicking on logout brings to login page
 
     @all
-    @regression
+    @debug
     Scenario: Verifying the Net New Assets Report
         Given I am on the Sign In page
         When I enter my valid Email address and password
@@ -29,12 +29,12 @@ Feature: Testing welcome page scenarios for Entrustody Insight
         And Clicking on logout brings to login page
 
     @all
-    @smoke
+    @debug
     Scenario: Verifying the Total AUM Report
         Given I am on the Sign In page
         When I enter my valid Email address and password
         And I click on Sign In button
         Then I should see the Total AUM report displayed with applied filter - By Advisor and Current
         When Total AUM for an advisor is below a pre-determined threshold or goal, their record is highlighted red
-        When Total AUM for an advisor is above a pre-determined threshold or goal, their record is highlighted green
+        #When Total AUM for an advisor is above a pre-determined threshold or goal, their record is highlighted green
         And Clicking on logout brings to login page

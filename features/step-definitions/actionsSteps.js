@@ -16,6 +16,11 @@ Given('I am on the Sign In page', async function () {
   await this.loginPage.open();
 });
 
+When('I should see the entrustody logo, signin button and terms', async function () {
+  await this.loginPage.verifyInsightTextOnSignIn()
+  await this.loginPage.verifyTermsAndConditions()
+})
+
 When('I enter my valid Email address and password', async function () {
   await this.loginPage.clickSignInButton()
   await this.loginPage.enterUsername("pedrohsduarte@gmail.com")
@@ -89,32 +94,29 @@ Then('I should see the Total AUM report displayed with applied filter - By Advis
 
 When('net new aum for an advisor is below a pre-determined threshold or goal, their record is highlighted red', async function () {
   const expectedBGColor = "rgba(253, 232, 228, 1)"
-  await this.loginPage.verifyBackgroundColorForNetNewAssetsRow(4, expectedBGColor)
+  await this.welcomePage.verifyBackgroundColorForNetNewAssetsRow(1, expectedBGColor)
 });
 
 When('net new aum for an advisor is above a pre-determined threshold or goal, their record is highlighted green', async function () {
   const expectedBGColor = "rgba(133, 217, 206, 0.25)"
-  await this.loginPage.verifyBackgroundColorForNetNewAssetsRow(1, expectedBGColor)
+  await this.welcomePage.verifyBackgroundColorForNetNewAssetsRow(4, expectedBGColor)
 });
 
 When('Total AUM for an advisor is below a pre-determined threshold or goal, their record is highlighted red', async function () {
   const expectedBGColor = "rgba(253, 232, 228, 1)"
-  await this.loginPage.verifyBackgroundColorForTotalAUMRow(4, expectedBGColor)
+  await this.welcomePage.verifyBackgroundColorForTotalAUMRow(1, expectedBGColor)
 });
 
 When('Total AUM for an advisor is above a pre-determined threshold or goal, their record is highlighted green', async function () {
   const expectedBGColor = "rgba(133, 217, 206, 0.25)"
-  await this.loginPage.verifyBackgroundColorForTotalAUMRow(1, expectedBGColor)
+  await this.welcomePage.verifyBackgroundColorForTotalAUMRow(4, expectedBGColor)
 });
 
-When('I should see the all 7 tiles on the top container', async function () {
-  await this.welcomePage.verifyTilesContent('Net New Assets')
-  await this.welcomePage.verifyTilesContent('Households')
-  await this.welcomePage.verifyTilesContent('Onboarding Time')
-  await this.welcomePage.verifyTilesContent('Outflow')
-  await this.welcomePage.verifyTilesContent('GrowthRate')
-  await this.welcomePage.verifyTilesContent('TopOffice')
-  await this.welcomePage.verifyTilesContent('TopAdvisor')
+Then('I should see L1 tiles displayed in the order - {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}', async function (string1, string2, string3, string4, string5, string6, string7, string8) {
+  const params = [string1, string2, string3, string4, string5, string6, string7, string8]
+  for(let i = 0; i < params.length; i++) {
+    await this.welcomePage.verifyTilesContent(params[i])
+  }
 });
 
 When('I mouse hover on Net New Assets tile', async function () {

@@ -1,6 +1,11 @@
 Feature: Testing Login scenarios for Entrustody Insight
 
   @all
+  Scenario: Verify Sign in page components
+    Given I am on the Sign In page
+    Then I should see the entrustody logo, signin button and terms
+
+  @all
   @regression
   Scenario: Verify User able to login to Insight Dashbaord using valid Username and Password
     Given I am on the Sign In page

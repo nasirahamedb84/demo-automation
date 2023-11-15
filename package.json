@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/cucumber-js --tags @debug --format json:./reports/results.json",
+    "test": "node_modules/.bin/cucumber-js --tags @all --format json:./reports/results.json",
     "test-debug": "node_modules/.bin/cucumber-js --tags @smoke features/feature-files/login.feature --format json:./reports/results.json"
   },
   "keywords": [],

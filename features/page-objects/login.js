@@ -14,8 +14,8 @@ class LoginPage {
     this.logOut = By.xpath("//*[@id='account-menu']//a[text()='Logout']");
     this.errorMessage = By.xpath("//div[@class='error pageLevel']");
     this.signInHeading = By.xpath("//*[@id='api']/div[@class='heading']")
-    this.tableNetNewAssetsRows = By.xpath("//*[@aria-colcount='5']//div[@data-id]");
-    this.tableTotalAUMRows = By.xpath("//*[@aria-colcount='4']//div[@data-id]");
+    this.terms = By.xpath("//*[@id='__next']//span[contains(@class, 'MuiTypography')]")
+    this.insighttext = By.xpath("//*[@id='__next']//h2[contains(@class, 'MuiTypography')]")
 
   }
 
@@ -84,16 +84,14 @@ class LoginPage {
     await this.driver.sleep(1000);
   }
 
-  async verifyBackgroundColorForNetNewAssetsRow(index, expectedBGColor) {
-    const rows = await this.driver.findElements(this.tableNetNewAssetsRows)
-    assert.equal(await rows[index-1].getCssValue('background-color'), expectedBGColor);
+  async verifyInsightTextOnSignIn() {
+    assert.equal(await this.driver.findElement(this.insighttext).getText(), 'Insights')
   }
 
-  async verifyBackgroundColorForTotalAUMRow(index, expectedBGColor) {
-    const rows = await this.driver.findElements(this.tableTotalAUMRows)
-    assert.equal(await rows[index-1].getCssValue('background-color'), expectedBGColor);
+  async verifyTermsAndConditions() {
+    const expectedTerms = "By logging in, you agree to our Terms of Use and Privacy Policy. You also elect to receive updates, newsletters, and offers from Entrustody. This site is protected by reCAPTCHA, and Google’s Privacy Policy and Terms of Service apply."
+    assert.equal(await this.driver.findElement(this.terms).getText(), expectedTerms)
   }
-  
 }
 
 module.exports = LoginPage;
