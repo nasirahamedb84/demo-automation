@@ -127,3 +127,102 @@ When('I mouse hover on Net New Assets tile', async function () {
 When('I should see the tile gets highlighted with grey background', async function () {
   await this.welcomePage.verifyBackgroundColor("rgba(233, 235, 236, 1)")
 });
+
+Given('I am on the Insight Dashbaord page', async function () {
+  await this.loginPage.open();
+  await this.loginPage.clickSignInButton()
+  await this.loginPage.enterUsername("pedrohsduarte@gmail.com")
+  await this.loginPage.enterPassword("c1SHEne4w8DG")
+  await this.loginPage.clickLogin()
+});
+
+When('I click on the Net New Assets column of the Net New Assets table', async function () {
+  await this.welcomePage.clickOnNetNewAssetsSortingColumn();
+});
+
+
+Then('the table data should be sorted by Net New Assets ascending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});
+
+When('I click on the Net New Assets column again', async function () {
+  await this.welcomePage.clickOnNetNewAssetsSortingColumn();
+});
+
+Then('the table data should be sorted by Net New Assets descending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});
+
+When('I click on the Advisor column of the Net New Assets table', async function () {
+  await this.welcomePage.clickOnNetNewAssetsColumnByIndex(1);
+});
+
+Then('the table data should be sorted by Advisor ascending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});
+
+When('I click on the Advisor column again', async function () {
+  await this.welcomePage.clickOnNetNewAssetsSortingColumn();
+});
+
+Then('the table data should be sorted by Advisor descending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});
+
+When('I click on the Net New Households column of the Net New Assets table', async function () {
+  await this.welcomePage.clickOnNetNewAssetsColumnByIndex(2);
+});
+
+Then('the table data should be sorted by Net New Households ascending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});
+
+When('I click on the Net New Households column again', async function () {
+  await this.welcomePage.clickOnNetNewAssetsSortingColumn();
+});
+
+Then('the table data should be sorted by Net New Households descending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});
+
+When('I click on the Inflows column of the Net New Assets table', async function () {
+  await this.welcomePage.clickOnNetNewAssetsColumnByIndex(4);
+});
+
+Then('the table data should be sorted by Inflows ascending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});
+
+When('I click on the Inflows column again', async function () {
+  await this.welcomePage.clickOnNetNewAssetsSortingColumn();
+});
+
+Then('the table data should be sorted by Inflows descending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});
+
+When('I click on the Outflows column of the Net New Assets table', async function () {
+  await this.welcomePage.clickOnNetNewAssetsColumnByIndex(5);
+});
+
+Then('the table data should be sorted by Outflows ascending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});
+
+When('I click on the Outflows column again', async function () {
+  await this.welcomePage.clickOnNetNewAssetsSortingColumn();
+});
+
+Then('the table data should be sorted by Outflows descending', async function () {
+  const sortingText = await this.welcomePage.getNetNewAssetsSortingColumnName()
+  await this.welcomePage.verifyTableNetNewAssetsData(sortingText)
+});

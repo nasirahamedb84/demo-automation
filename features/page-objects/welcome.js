@@ -8,17 +8,22 @@ const { verify } = require('crypto');
 class WelcomePage {
   constructor(driver) {
     this.driver = driver;
+    //element for Net New assets table
     this.tableNetNewAssetsRows = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//tbody/tr");
     this.tableNetNewAssetsColumns = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//tbody/tr/th");
     this.tableNetNewAssetsHeaderCells = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//thead/tr/th");
+    this.tableNewNewAssetsSortingcolumn = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//thead/tr/th[@aria-sort]")
+    this.tableNetNewAssetsHeaderColumn1 = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//thead/tr/th[1]");
+    this.tableNetNewAssetsHeaderColumn2 = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//thead/tr/th[2]");
+    this.tableNetNewAssetsHeaderColumn3 = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//thead/tr/th[3]");
+    this.tableNetNewAssetsHeaderColumn4 = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//thead/tr/th[4]");
+    this.tableNetNewAssetsHeaderColumn5 = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//thead/tr/th[5]");
+
+    //element for Total AUM table
     this.tableTotalAUMRows = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[2]//tbody/tr")
     this.tableTotalAUMColumns = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[2]//tbody/tr/th");
     this.tableTotalAUMHeaderCells = By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[2]//thead/tr/th");
-    //this.tableNetNewAssetsRows = By.xpath("//*[@aria-colcount='5']//div[@data-id]");
-    //this.tableNetNewAssetsHeaderCells = By.xpath("//*[@aria-colcount='5']//div[@role='columnheader']");
-    //this.tableTotalAUMRows = By.xpath("//*[@aria-colcount='4']//div[@data-id]");
-    //this.tableTotalAUMHeaderCells = By.xpath("//*[@aria-colcount='4']//div[@role='columnheader']");
-    //this.tableRowByIndex = By.xpath("//*[@aria-colcount='5']//div[@data-id='{index}']");
+    
 
     //element for tiles
     this.tileContainer = By.xpath("//*[@id='__next']//div[contains(@class,'MuiBox-root')]/div[contains(@class,'MuiContainer-root')]")
@@ -33,16 +38,8 @@ class WelcomePage {
 
   }
 
-  async verifyTableNetNewAssetsData() {
+  async verifyTableNetNewAssetsData(columnSortText = "defaultSort") {
     const extractedData = [];
-    /*const rows = await this.driver.findElements(this.tableNetNewAssetsRows);
-    // Loop through rows and cells to verify data
-    for (let i = 0; i < rows.length; i++) {
-      const cells = await this.driver.findElements(By.xpath("(//*[@aria-colcount='5']//div[@data-id='"+[i+1]+"']//div[@role='cell'])"));
-      const rowData = await Promise.all(cells.map(cell => cell.getText()));
-      extractedData.push(rowData);
-    }
-    assert.deepStrictEqual(NetNewAssets.tableNetNewAssetsData, extractedData);    */
     const rows = await this.driver.findElements(this.tableNetNewAssetsRows);
     for (let i = 0; i < rows.length; i++) {
       // Get all cells in the current row
@@ -50,7 +47,41 @@ class WelcomePage {
       const rowData = await Promise.all(cells.map(cell => cell.getText()));
       extractedData.push(rowData);
     }
-    assert.deepStrictEqual(NetNewAssets.tableNetNewAssetsData1, extractedData);
+    switch (columnSortText) {
+      case 'Net New Assets\nSorted Ascending':
+        assert.deepStrictEqual(NetNewAssets.tableNetNewAssetsDataSortAscending, extractedData);
+        break
+      case 'Net New Assets\nSorted Descending':
+        assert.deepStrictEqual(NetNewAssets.tableNetNewAssetsDataSortDecending, extractedData);
+        break
+      case 'Advisor\nSorted Ascending':
+        assert.deepStrictEqual(NetNewAssets.tableAdvisorDataSortAscending, extractedData);
+        break
+      case 'Advisor\nSorted Descending':
+        assert.deepStrictEqual(NetNewAssets.tableAdvisorDataSortDecending, extractedData);
+        break
+      case 'Net New Households\nSorted Ascending':
+        assert.deepStrictEqual(NetNewAssets.tableNetNewHouseholdsDataSortAscending, extractedData);
+        break
+      case 'Net New Households\nSorted Descending':
+        assert.deepStrictEqual(NetNewAssets.tableNetNewHouseholdsDataSortDecending, extractedData);
+        break
+      case 'Inflows\nSorted Ascending':
+        assert.deepStrictEqual(NetNewAssets.tableInflowsDataSortAscending, extractedData);
+        break
+      case 'Inflows\nSorted Descending':
+        assert.deepStrictEqual(NetNewAssets.tableInflowsDataSortDecending, extractedData);
+        break
+      case 'Outflows\nSorted Ascending':
+        assert.deepStrictEqual(NetNewAssets.tableOutflowsDataSortAscending, extractedData);
+        break
+      case 'Outflows\nSorted Descending':
+        assert.deepStrictEqual(NetNewAssets.tableOutflowsDataSortDecending, extractedData);
+        break
+      case 'defaultSort':
+        assert.deepStrictEqual(NetNewAssets.tableNetNewAssetsData1, extractedData);
+        break
+    }
   }
 
   async verifyTableNetNewAssetsHeader() {
@@ -128,7 +159,6 @@ class WelcomePage {
 
   async verifyBackgroundColor(expectedBGColor) {
     const backgroundColor = await this.driver.findElement(this.newNewAssets).getCssValue('background-color');
-    //console.log(backgroundColor);
     assert.equal(backgroundColor, expectedBGColor);
     }
   
@@ -136,8 +166,6 @@ class WelcomePage {
     const elementToHover = await this.driver.findElement(this.newNewAssets);
     await this.driver.actions().move({ origin: elementToHover }).perform();
     await this.driver.sleep(1000);
-    //const actions = this.driver.actions();
-    //await actions.moveToElement(elementToHover).perform();
     }
 
   async verifyBackgroundColorForNetNewAssetsRow(index, expectedBGColor) {
@@ -149,7 +177,22 @@ class WelcomePage {
     const rows = await this.driver.findElements(this.tableTotalAUMColumns)
     assert.equal(await rows[index-1].getCssValue('background-color'), expectedBGColor);
   }
+
+  async clickOnNetNewAssetsSortingColumn() {
+    await this.driver.findElement(this.tableNewNewAssetsSortingcolumn).click();
+    await this.driver.sleep(2000);
+  }
+
+  async getNetNewAssetsSortingColumnName() {
+    return await this.driver.findElement(this.tableNewNewAssetsSortingcolumn).getText();
+  }
   
+  async clickOnNetNewAssetsColumnByIndex(index) {
+    await this.driver.findElement(By.xpath("(//*[@id='__next']//*[@aria-labelledby='tableTitle'])[1]//thead/tr/th["+[index]+"]")).click();
+    await this.driver.sleep(2000);
+  }
+
+
   }  
 
 
